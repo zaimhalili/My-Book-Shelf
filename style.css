@@ -1,0 +1,171 @@
+body {
+    background-color: rgb(96, 71, 66);
+    align-items: center;
+}
+
+.book a {
+    height: 300px;
+    width: 230px;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: auto;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgb(78, 58, 54);
+    padding: 20px 0 10px 0;
+    z-index: 10;
+    border-radius: 20px;
+}
+
+.top-nav h1 {
+    margin: auto;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    margin-left: 200px;
+    font-family: cursive;
+    text-align: center;
+    color: antiquewhite;
+}
+
+.top-nav button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 16px 0 0;
+    padding-right: 8px;
+    /* Reduce this value or set to 0 for closer spacing */
+    margin-left: 20px;
+    /* Optional: add left margin if needed */
+}
+
+.top-nav svg {
+    color: antiquewhite;
+    background: none;
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+    margin: auto;
+}
+
+.top-nav svg:hover {
+    transform: scale(1.15);
+}
+
+.top-nav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    border-radius: 4px;
+    padding-left: 0;
+    margin-right: 20px;
+}
+
+.top-nav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    background: #d4d4d4;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.top-nav .search-container button i {
+    color: #2a2a2a;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+.top-nav .search-container button:hover {
+    background: #c0b7b4;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    .top-nav .search-container {
+        float: none;
+    }
+
+    .top-nav a,
+    .top-nav input[type=text],
+    .top-nav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+        font-family: cursive;
+    }
+
+    .top-nav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}
+
+.shelf1 {
+    background-color: lightgrey;
+    width: 1200px;
+    min-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow books to wrap to next line */
+    border-radius: 20px;
+    margin: 80px auto 0 auto;
+    /* Add top margin for nav */
+    gap: 40px 60px;
+    /* row-gap column-gap */
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.book {
+    background-color: rgb(210, 144, 116);
+    height: 300px;
+    width: 230px;
+    margin: 30px;
+    border-right: 70px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 7px solid rgb(255, 251, 244);
+    cursor: pointer;
+    transition: transform 0.3s;
+    /* Smooth zoom transition */
+}
+
+.book:hover {
+    transform: scale(1.15);
+}
+
+.bookTitle {
+    color: antiquewhite;
+    font-size: 20px;
+    text-align: center;
+    border: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.imagePos {
+    width: 120px;
+    height: 180px;
+    border-radius: 15px;
+    border: 1px solid rgb(96, 71, 66);
+}

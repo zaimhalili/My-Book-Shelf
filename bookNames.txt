@@ -1,0 +1,17 @@
+So these are my books:
+    A court of thorns and Roses
+    The Name of The Wind
+    The Wise Man's Fear
+    A Court of Mist and Fury
+    A Court of Wings and Ruin
+    The Way of Kings
+
+To add to the site:
+    Search bar with Order button alphabetically, last readed, Pages
+    More books
+    A div to enter new books and delete
+    Order the divs if there are many
+
+
+Last but not least: 
+    Find a way to share to phone

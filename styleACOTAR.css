@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(96, 71, 66);
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: cursive;
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+}
+
+a {
+    height: 300px;
+    width: 230px;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgb(96, 71, 66);
+    padding: 20px 0 10px 0;
+    z-index: 10;
+}
+
+.top-nav h1 {
+    margin: 0 auto;
+    flex: 1;
+    text-align: center;
+}
+
+.top-nav button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 16px 0 0;
+    padding-right: 8px;
+    /* Reduce this value or set to 0 for closer spacing */
+    margin-left: 20px;
+    /* Optional: add left margin if needed */
+}
+
+.top-nav svg {
+    background: none;
+    width: 40px;
+    height: 40px;
+}
+
+.shelf1 {
+    background-color: lightgrey;
+    width: 1200px;
+    min-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow books to wrap to next line */
+    border-radius: 20px;
+    margin: 80px auto 0 auto;
+    /* Add top margin for nav */
+    gap: 40px 60px;
+    /* row-gap column-gap */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+.book {
+    background-color: rgb(201, 121, 87);
+    height: 300px;
+    width: 230px;
+    margin: 30px;
+    border-right: 70px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 7px solid rgb(255, 251, 244);
+    cursor: pointer;
+    transition: transform 0.3s;
+    /* Smooth zoom transition */
+}
+
+.book:hover {
+    transform: scale(1.15);
+}
+
+.bookTitle {
+    color: antiquewhite;
+    font-size: 20px;
+    text-align: center;
+    border: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.imagePos {
+    width: 120px;
+    height: 180px;
+    border-radius: 15px;
+    border: 1px solid rgb(96, 71, 66);
+}
