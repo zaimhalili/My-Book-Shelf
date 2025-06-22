@@ -1,17 +1,19 @@
-So these are my books:
-    A court of thorns and Roses
-    The Name of The Wind
-    The Wise Man's Fear
-    A Court of Mist and Fury
-    A Court of Wings and Ruin
-    The Way of Kings
+To fix:
+    Add div for a text box for the comment, parts that I liked
 
 To add to the site:
     Search bar with Order button alphabetically, last readed, Pages
-    More books
     A div to enter new books and delete
     Order the divs if there are many
-
+    A way to add the number of pages already read possibly to count how many left
+    Add more images to each page (max - 5)
+    Find a way to use JavaScript
 
 Last but not least: 
     Find a way to share to phone
+
+To be added later on the project after finishing all the pages:
+    Links for each of the characters with an image of the person, description, age, character, personal comment
+    About button close to the home button to give general information about the page
+    A database or save option automatically locally
+    A way to bookmark favourite books
