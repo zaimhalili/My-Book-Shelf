@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Court of Thorns and Roses</title>
     <link rel="stylesheet" href="styleACOTAR.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -19,6 +20,11 @@
         </a>
 
         <h1>My Book Shelf</h1>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
     </div>
 
     <!-- Book Shelf -->
@@ -26,6 +32,18 @@
         <div class="imagebook" data-book-id="1">
             <img class="imageCover" src="../Images/acotar.jpg" alt="A Court of Thorns and Roses">
         </div>
+
+        <form class="personal-comment">
+            <textarea placeholder="Add your personal comment here..." name="comment" class="comment-input" rows="2"></textarea>
+            <button type="submit" aria-label="Submit comment">
+                <i class="fa fa-paper-plane"></i>
+            </button>
+            <button type="reset" aria-label="Reset comment">
+                <i class="fa fa-eraser"></i>
+            </button>
+        </form>
+        <!-- Place saved comment here -->
+        <div class="saved-comment" id="savedComment"></div>
         <!-- Book Description: name, summary, pages, main characters etc-->
         <div class="book-info">
             <h1>A Court of Thorns and Roses</h1>
@@ -74,6 +92,22 @@
 
 
     </div>
+    <div class="footer">
+        <p>© 2023 My Book Shelf. All rights reserved.</p>
+        <p>Created by Zaim</p>
+        <div class="social-icons">
+            <a href="#" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <script src="acotar.js"></script>
 </body>
 
 </html>
