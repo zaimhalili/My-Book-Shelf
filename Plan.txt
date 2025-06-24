@@ -1,5 +1,10 @@
 To fix:
+    Fix memory JavaScript as it doesn't save the added comments but only
+    the last comment made
+    
     Add div for a text box for the comment, parts that I liked
+    Change Fonts
+    Add animations and transitions when opening the pages
 
 To add to the site:
     Search bar with Order button alphabetically, last readed, Pages
@@ -17,3 +22,5 @@ To be added later on the project after finishing all the pages:
     About button close to the home button to give general information about the page
     A database or save option automatically locally
     A way to bookmark favourite books
+
+

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        savedComment.textContent = textarea.value;
+        savedComment.textContent += textarea.value;
         localStorage.setItem('acotarComment', textarea.value);
         textarea.value = '';
     });
