@@ -1,6 +1,4 @@
 To fix:
-    Fix memory JavaScript as it doesn't save the added comments but only
-    the last comment made
     
     Add div for a text box for the comment, parts that I liked
     Change Fonts
