@@ -153,3 +153,32 @@ function removeBookFromStorage(name) {
     books = books.filter(book => book.name !== name);
     localStorage.setItem('bookshelf', JSON.stringify(books));
 }
+
+// Map book titles (as shown in overlay-text) to their HTML file names
+const bookLinks = {
+    "A Court of Thorns and Roses": "indexACOTAR.html",
+    "A Court of Mist and Fury": "indexACOMAF.html",
+    "A Court of Wings and Ruin": "indexACOWAR.html",
+    "The Name of the Wind": "tnotw.html",
+    "The Wise Man's Fear": "twmf.html",
+    "The Way of Kings": "twok.html"
+    // Add more as needed
+};
+
+function getBookLink(title) {
+    const bookLinks = {
+        "A Court of Thorns and Roses": "indexACOTAR.html",
+        "A Court of Mist and Fury": "indexACOMAF.html",
+        "A Court of Wings and Ruin": "indexACOWAR.html",
+        "The Name of the Wind": "tnotw.html",
+        "The Wise Man's Fear": "twmf.html",
+        "The Way of Kings": "twok.html"
+    };
+    if (window.location.pathname.includes('/Pages/')) {
+        // Already in Pages, just use the filename
+        return bookLinks[title];
+    } else {
+        // From root, go into Pages/
+        return "Pages/" + bookLinks[title];
+    }
+}

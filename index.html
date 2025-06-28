@@ -46,28 +46,28 @@
             </div>
         </a>
 
-        <a href="" style="text-decoration: none; color: inherit;">
+        <a href="Pages/indexACOWAR.html" style="text-decoration: none; color: inherit;">
             <div class="book" id="A Court of Wings and Ruin">
                 <img class="imagePos" src="Images/acowar.jpg" alt="A Court of Wings and Ruin">
                 <p class="overlay-text">A Court of Wings and Ruin</p>
             </div>
         </a>
 
-        <a href="" style="text-decoration: none; color: inherit;">
+        <a href="Pages/tnotw.html" style="text-decoration: none; color: inherit;">
             <div class="book" id="The Name of the Wind">
                 <img class="imagePos" src="Images/tnotw.jpg" alt="The Name of the Wind">
                 <p class="overlay-text">The Name of the Wind</p>
             </div>
         </a>
 
-        <a href="" style="text-decoration: none; color: inherit;">
+        <a href="Pages/twmf.html" style="text-decoration: none; color: inherit;">
             <div class="book" id="The Wise Man's Fear">
                 <img class="imagePos" src="Images/twmf.jpg" alt="The Wise Man's Fear">
                 <p class="overlay-text">The Wise Man's Fear</p>
             </div>
         </a>
 
-        <a href="" style="text-decoration: none; color: inherit;">
+        <a href="Pages/twok.html" style="text-decoration: none; color: inherit;">
             <div class="book" id="The Way of Kings">
                 <img class="imagePos" src="Images/twok.jpg" alt="The Way of Kings">
                 <p class="overlay-text">The Way of Kings</p>
@@ -105,26 +105,61 @@
     <script src="script.js"></script>
     <script src="searchbar.js"></script>
     <script type="text/javascript">
-        const { useState } = React;
+        const { useState, useEffect } = React;
 
-        function Greeting() {
-            const [name, setName] = useState("");
-            return (
-                React.createElement('div', { style: { margin: "16px 0", padding: "12px", background: "#eee", borderRadius: "8px" } },
-                    React.createElement('h2', null, "Welcome to My Bookshelf!"),
+        function FavoriteBook() {
+            const [name, setName] = useState(localStorage.getItem("favName") || "");
+            const [favoriteBook, setFavoriteBook] = useState(localStorage.getItem("favBook") || "");
+            const books = [
+                "A Court of Thorns and Roses",
+                "A Court of Mist and Fury",
+                "A Court of Wings and Ruin",
+                "The Name of the Wind",
+                "The Wise Man's Fear",
+                "The Way of Kings"
+            ];
+
+            useEffect(() => {
+                localStorage.setItem("favName", name);
+            }, [name]);
+
+            useEffect(() => {
+                localStorage.setItem("favBook", favoriteBook);
+            }, [favoriteBook]);
+
+            return React.createElement(
+                'div',
+                { style: { margin: "32px auto", maxWidth: 400, padding: 24, background: "rgba(54, 56, 78, 0.85)", borderRadius: 12, color: "#fff" } },
+                React.createElement('h2', null, "Enter name and favourite book:"),
+                React.createElement('div', { style: { marginBottom: 16 } },
                     React.createElement('input', {
                         type: "text",
-                        placeholder: "Type your name...",
+                        placeholder: "Your name",
                         value: name,
                         onChange: e => setName(e.target.value),
-                        style: { marginRight: "8px" }
+                        style: { marginRight: 8, padding: 6, borderRadius: 4, border: "1px solid #ccc" }
                     }),
                     name && React.createElement('span', null, `Hello, ${name}!`)
+                ),
+                React.createElement('div', { style: { marginBottom: 16 } },
+                    React.createElement('select', {
+                        value: favoriteBook,
+                        onChange: e => setFavoriteBook(e.target.value),
+                        style: { padding: 6, borderRadius: 4, border: "1px solid #ccc" }
+                    },
+                        React.createElement('option', { value: "" }, "Select your favorite book"),
+                        books.map(book =>
+                            React.createElement('option', { key: book, value: book }, book)
+                        )
+                    )
+                ),
+                favoriteBook && React.createElement('div', { style: { marginTop: 12, color: "#fff" } },
+                    "Your favorite book is: ", React.createElement('b', null, favoriteBook)
                 )
             );
         }
 
-        ReactDOM.createRoot(document.getElementById('react-root')).render(React.createElement(Greeting));
+        ReactDOM.createRoot(document.getElementById('react-root')).render(React.createElement(FavoriteBook));
     </script>
 </body>
 
