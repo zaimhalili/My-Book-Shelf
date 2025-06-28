@@ -24,8 +24,9 @@
         <h1>My Bookshelf</h1>
 
         <div class="search-container">
-            <input type="text" placeholder="Search.." name="search">
+            <input type="text" placeholder="Search.." name="search" id="search-input">
             <button type="submit" id="s-button"><i class="fa fa-search"></i></button>
+            <div id="search-suggestions" class="search-suggestions"></div>
         </div>
     </header>
 
@@ -80,8 +81,51 @@
         </a>
     </div>
 
+    <!-- Add Book Modal -->
+    <div id="addBookModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Add a New Book</h2>
+            <form id="addBookForm">
+                <label for="bookName">Book Name:</label>
+                <input type="text" id="bookName" name="bookName" required>
+                <label for="bookImage">Book Image:</label>
+                <input type="file" id="bookImage" name="bookImage" accept="image/*" required>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="react-root"></div>
+
+    <!-- React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
     <script src="script.js"></script>
     <script src="searchbar.js"></script>
+    <script type="text/javascript">
+        const { useState } = React;
+
+        function Greeting() {
+            const [name, setName] = useState("");
+            return (
+                React.createElement('div', { style: { margin: "16px 0", padding: "12px", background: "#eee", borderRadius: "8px" } },
+                    React.createElement('h2', null, "Welcome to My Bookshelf!"),
+                    React.createElement('input', {
+                        type: "text",
+                        placeholder: "Type your name...",
+                        value: name,
+                        onChange: e => setName(e.target.value),
+                        style: { marginRight: "8px" }
+                    }),
+                    name && React.createElement('span', null, `Hello, ${name}!`)
+                )
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('react-root')).render(React.createElement(Greeting));
+    </script>
 </body>
 
 </html>

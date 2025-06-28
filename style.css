@@ -120,6 +120,36 @@ body::before {
     transform: scale(1.15);
 }
 
+/* Search suggestions */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    max-height: 180px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+.search-suggestions div {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.search-suggestions div:hover {
+    background: #eee;
+}
+
 /* Shelf layout */
 .shelf {
     background-color: rgba(255, 255, 255, 0.05);
@@ -200,6 +230,52 @@ body::before {
 .book:focus .overlay-text,
 .book:hover .imagePos+.overlay-text {
     visibility: visible;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 10px;
+    min-width: 300px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#addBookForm label {
+    display: block;
+    margin-top: 12px;
+}
+
+#addBookForm input[type="text"],
+#addBookForm input[type="file"] {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+#addBookForm button {
+    margin-top: 10px;
 }
 
 /* Responsive styles */
