@@ -1,5 +1,3 @@
-/** @type {HTMLInputElement} */
-
 const searchButton = document.getElementById("s-button");
 const searchInput = document.querySelector('input[type="text"]');
 const books = document.getElementsByClassName("overlay-text");
